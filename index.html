@@ -1,174 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krishna Bakery</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Bakery</title>
 
-    body {
-      background: #0d0d0d;
-      color: white;
-      text-align: center;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
 
-    header {
-      background: linear-gradient(to right, #000000, #1a1a1a);
-      padding: 40px 20px;
-      border-bottom: 2px solid red;
-    }
+body{
+background:#0b0b0b;
+color:white;
+text-align:center;
+}
 
-    header h1 {
-      color: red;
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+header{
+padding:40px 20px;
+background:linear-gradient(to right,#000,#1a1a1a);
+border-bottom:2px solid red;
+}
 
-    header p {
-      color: #ccc;
-    }
+header h1{
+font-size:45px;
+color:red;
+margin-bottom:10px;
+}
 
-    .hero {
-      padding: 50px 20px;
-    }
+header p{
+color:#ccc;
+}
 
-    .hero h2 {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
+.hero{
+padding:50px 20px;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-    }
+.hero h2{
+font-size:38px;
+}
 
-    .card {
-      background: #1a1a1a;
-      border-radius: 15px;
-      overflow: hidden;
-      transition: 0.3s;
-      border: 1px solid #333;
-    }
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:40px 20px;
+}
 
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px red;
-    }
+.card{
+background:#1a1a1a;
+border-radius:15px;
+overflow:hidden;
+transition:0.3s;
+cursor:pointer;
+border:1px solid #333;
+}
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px red;
+}
 
-    .card h3 {
-      color: red;
-      margin: 15px 0 10px;
-    }
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
 
-    .card p {
-      padding: 0 15px 20px;
-      color: #ddd;
-      font-size: 14px;
-    }
+.card h3{
+color:red;
+margin:15px 0 10px;
+}
 
-    .contact {
-      padding: 50px 20px;
-    }
+.card p{
+padding:0 15px 20px;
+font-size:14px;
+color:#ddd;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 25px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-    }
+.contact{
+padding:50px 20px;
+}
 
-    footer {
-      background: black;
-      padding: 20px;
-      margin-top: 40px;
-      color: #aaa;
-    }
-  </style>
+.contact h2{
+color:red;
+margin-bottom:20px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 25px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:10px;
+margin-top:20px;
+font-weight:bold;
+}
+
+footer{
+background:black;
+padding:20px;
+margin-top:40px;
+color:#aaa;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Krishna Bakery</h1>
-  <p>All Types Of Bakery Items, Pizza, Ice Cream & Birthday Essentials Available Here</p>
+<h1>Krishna Bakery</h1>
+<p>All Types Of Bakery Items, Pizza, Ice Cream & Birthday Essentials Available Here</p>
 </header>
 
 <section class="hero">
-  <h2>Fresh Bakery Items Every Day 🍰</h2>
+<h2>Fresh Bakery Items Every Day 🍰</h2>
 </section>
 
 <section class="products">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1200&auto=format&fit=crop" alt="Cake">
-    <h3>Cakes</h3>
-    <p>Delicious birthday and special cakes available daily.</p>
-  </div>
+<div class="card" onclick="order('Chocolate Cake')">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop">
+<h3>Chocolate Cake</h3>
+<p>Delicious chocolate birthday cakes available.</p>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop" alt="Bread">
-    <h3>Fresh Bread</h3>
-    <p>Soft and fresh breads baked every morning.</p>
-  </div>
+<div class="card" onclick="order('Black Forest Cake')">
+<img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200&auto=format&fit=crop">
+<h3>Black Forest</h3>
+<p>Fresh creamy black forest cakes daily.</p>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1200&auto=format&fit=crop" alt="Patties">
-    <h3>Patties</h3>
-    <p>Veg, egg and paneer patties available.</p>
-  </div>
+<div class="card" onclick="order('Vanilla Cake')">
+<img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop">
+<h3>Vanilla Cake</h3>
+<p>Soft vanilla cakes with sweet cream.</p>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?q=80&w=1200&auto=format&fit=crop" alt="Pizza">
-    <h3>Pizza</h3>
-    <p>Hot and tasty pizza with cheese toppings.</p>
-  </div>
+<div class="card" onclick="order('Cheese Pizza')">
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
+<h3>Cheese Pizza</h3>
+<p>Hot cheesy pizza with tasty toppings.</p>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop" alt="Ice Cream">
-    <h3>Ice Cream</h3>
-    <p>Chocolate, vanilla and many ice cream flavours.</p>
-  </div>
+<div class="card" onclick="order('Veg Pizza')">
+<img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=1200&auto=format&fit=crop">
+<h3>Veg Pizza</h3>
+<p>Loaded veg pizza with extra cheese.</p>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?q=80&w=1200&auto=format&fit=crop" alt="Cold Drinks">
-    <h3>Cold Drinks</h3>
-    <p>Refreshing cold drinks and beverages available.</p>
-  </div>
+<div class="card" onclick="order('Chocolate Ice Cream')">
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop">
+<h3>Chocolate Ice Cream</h3>
+<p>Cold and creamy chocolate ice cream.</p>
+</div>
+
+<div class="card" onclick="order('Vanilla Ice Cream')">
+<img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?q=80&w=1200&auto=format&fit=crop">
+<h3>Vanilla Ice Cream</h3>
+<p>Sweet vanilla flavour ice cream available.</p>
+</div>
+
+<div class="card" onclick="order('Egg Patties')">
+<img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1200&auto=format&fit=crop">
+<h3>Egg Patties</h3>
+<p>Fresh and tasty egg patties daily.</p>
+</div>
+
+<div class="card" onclick="order('Veg Patties')">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop">
+<h3>Veg Patties</h3>
+<p>Crispy veg patties available anytime.</p>
+</div>
 
 </section>
 
 <section class="contact">
-  <h2 style="color:red;">Contact Us</h2>
-  <br>
-  <p>📞 Phone Number: 9954115520</p>
-  <br>
-  <p>📍 Address: Silapathar Town, Near Police Station, Opposite Daily Market</p>
+<h2>Contact Us</h2>
 
-  <a class="btn" href="https://wa.me/919954115520" target="_blank">
-    Order on WhatsApp
-  </a>
+<p>📞 Phone Number: 9954115520</p>
+<br>
+<p>📍 Address: Silapathar Town, Near Police Station, Opposite Daily Market</p>
+
+<a class="btn" href="https://wa.me/919954115520" target="_blank">
+Order On WhatsApp
+</a>
 </section>
 
 <footer>
-  © 2026 Krishna Bakery | All Rights Reserved
+© 2026 Krishna Bakery | All Rights Reserved
 </footer>
+
+<script>
+function order(product){
+let message = `Hello Krishna Bakery, mujhe ${product} chahiye.`;
+let url = `https://wa.me/919954115520?text=${encodeURIComponent(message)}`;
+window.open(url,'_blank');
+}
+</script>
 
 </body>
 </html>
