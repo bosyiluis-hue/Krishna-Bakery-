@@ -6,48 +6,92 @@
 <title>Krishna Bakery</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
 background:#0b0b0b;
 color:white;
-text-align:center;
 }
 
 header{
-padding:40px 20px;
 background:linear-gradient(to right,#000,#1a1a1a);
+padding:40px 20px;
+text-align:center;
 border-bottom:2px solid red;
 }
 
 header h1{
-font-size:45px;
+font-size:50px;
 color:red;
 margin-bottom:10px;
 }
 
 header p{
 color:#ccc;
+font-size:18px;
 }
 
 .hero{
-padding:50px 20px;
+height:70vh;
+background:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1400&auto=format&fit=crop') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
 }
 
-.hero h2{
-font-size:38px;
+.hero-content{
+background:rgba(0,0,0,0.7);
+padding:30px;
+border-radius:15px;
+}
+
+.hero-content h2{
+font-size:45px;
+margin-bottom:15px;
+color:#fff;
+}
+
+.hero-content p{
+color:#ddd;
+margin-bottom:20px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1ebc59;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+color:red;
+margin:50px 0 30px;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:40px 20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+padding:0 20px 50px;
 }
 
 .card{
@@ -60,53 +104,103 @@ border:1px solid #333;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-8px);
 box-shadow:0 0 20px red;
 }
 
 .card img{
 width:100%;
-height:180px;
+height:220px;
 object-fit:cover;
 }
 
 .card h3{
 color:red;
-margin:15px 0 10px;
+padding:15px 10px 5px;
 }
 
 .card p{
-padding:0 15px 20px;
-font-size:14px;
+padding:0 10px 20px;
 color:#ddd;
+font-size:14px;
+}
+
+.banner{
+margin:40px 20px;
+background:linear-gradient(to right,#ff0000,#a80000);
+padding:30px;
+text-align:center;
+border-radius:15px;
+}
+
+.banner h2{
+font-size:35px;
+margin-bottom:10px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+padding:0 20px 50px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.review-section{
+padding:20px;
+}
+
+.review{
+background:#1a1a1a;
+margin:20px auto;
+padding:20px;
+max-width:700px;
+border-radius:12px;
+border-left:4px solid red;
 }
 
 .contact{
+text-align:center;
 padding:50px 20px;
 }
 
-.contact h2{
-color:red;
-margin-bottom:20px;
+.contact p{
+margin:10px 0;
+color:#ddd;
 }
 
-.btn{
-display:inline-block;
-padding:14px 25px;
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
+padding:15px 18px;
+border-radius:50%;
+font-size:28px;
 text-decoration:none;
-border-radius:10px;
-margin-top:20px;
-font-weight:bold;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 footer{
 background:black;
+text-align:center;
 padding:20px;
 margin-top:40px;
 color:#aaa;
 }
+
 </style>
 </head>
 
@@ -118,39 +212,51 @@ color:#aaa;
 </header>
 
 <section class="hero">
+<div class="hero-content">
 <h2>Fresh Bakery Items Every Day 🍰</h2>
+<p>Order your favourite bakery products directly on WhatsApp.</p>
+
+<a class="btn"
+href="https://wa.me/919954115520"
+target="_blank">
+Order Now
+</a>
+
+</div>
 </section>
+
+<h2 class="section-title">Our Products</h2>
 
 <section class="products">
 
 <div class="card" onclick="order('Chocolate Cake')">
 <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop">
 <h3>Chocolate Cake</h3>
-<p>Delicious chocolate birthday cakes available.</p>
+<p>Fresh and delicious chocolate birthday cakes.</p>
 </div>
 
 <div class="card" onclick="order('Black Forest Cake')">
 <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200&auto=format&fit=crop">
-<h3>Black Forest</h3>
-<p>Fresh creamy black forest cakes daily.</p>
+<h3>Black Forest Cake</h3>
+<p>Soft creamy black forest cakes available.</p>
 </div>
 
 <div class="card" onclick="order('Vanilla Cake')">
 <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop">
 <h3>Vanilla Cake</h3>
-<p>Soft vanilla cakes with sweet cream.</p>
+<p>Sweet vanilla cream cakes freshly prepared.</p>
 </div>
 
 <div class="card" onclick="order('Cheese Pizza')">
 <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
 <h3>Cheese Pizza</h3>
-<p>Hot cheesy pizza with tasty toppings.</p>
+<p>Hot and cheesy pizza with delicious toppings.</p>
 </div>
 
 <div class="card" onclick="order('Veg Pizza')">
 <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=1200&auto=format&fit=crop">
 <h3>Veg Pizza</h3>
-<p>Loaded veg pizza with extra cheese.</p>
+<p>Loaded vegetable pizza with extra cheese.</p>
 </div>
 
 <div class="card" onclick="order('Chocolate Ice Cream')">
@@ -159,48 +265,101 @@ color:#aaa;
 <p>Cold and creamy chocolate ice cream.</p>
 </div>
 
-<div class="card" onclick="order('Vanilla Ice Cream')">
-<img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?q=80&w=1200&auto=format&fit=crop">
-<h3>Vanilla Ice Cream</h3>
-<p>Sweet vanilla flavour ice cream available.</p>
-</div>
-
 <div class="card" onclick="order('Egg Patties')">
 <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1200&auto=format&fit=crop">
 <h3>Egg Patties</h3>
-<p>Fresh and tasty egg patties daily.</p>
+<p>Fresh bakery style egg patties daily.</p>
 </div>
 
 <div class="card" onclick="order('Veg Patties')">
 <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop">
 <h3>Veg Patties</h3>
-<p>Crispy veg patties available anytime.</p>
+<p>Crispy and tasty veg patties available.</p>
+</div>
+
+</section>
+
+<section class="banner">
+<h2>🎉 Birthday Celebration Special 🎂</h2>
+<p>Birthday Cakes, Candles, Decorations & Party Items Available Here.</p>
+</section>
+
+<h2 class="section-title">Bakery Gallery</h2>
+
+<section class="gallery">
+
+<img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop">
+
+</section>
+
+<h2 class="section-title">Customer Reviews</h2>
+
+<section class="review-section">
+
+<div class="review">
+⭐ “Best bakery shop in Silapathar. Cakes are fresh and tasty.”
+</div>
+
+<div class="review">
+⭐ “Good quality snacks and birthday items available.”
+</div>
+
+<div class="review">
+⭐ “Fast response on WhatsApp and friendly service.”
 </div>
 
 </section>
 
 <section class="contact">
-<h2>Contact Us</h2>
+
+<h2 class="section-title">Contact Us</h2>
 
 <p>📞 Phone Number: 9954115520</p>
-<br>
+
 <p>📍 Address: Silapathar Town, Near Police Station, Opposite Daily Market</p>
 
-<a class="btn" href="https://wa.me/919954115520" target="_blank">
-Order On WhatsApp
+<p>🕒 Open Daily: 7 AM - 10 PM</p>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/919954115520"
+target="_blank">
+Chat On WhatsApp
 </a>
+
 </section>
+
+<a class="whatsapp-float"
+href="https://wa.me/919954115520"
+target="_blank">
+💬
+</a>
 
 <footer>
 © 2026 Krishna Bakery | All Rights Reserved
 </footer>
 
 <script>
+
 function order(product){
-let message = `Hello Krishna Bakery, mujhe ${product} chahiye.`;
-let url = `https://wa.me/919954115520?text=${encodeURIComponent(message)}`;
+
+let message =
+`Hello Krishna Bakery, mujhe ${product} chahiye.`;
+
+let url =
+`https://wa.me/919954115520?text=${encodeURIComponent(message)}`;
+
 window.open(url,'_blank');
+
 }
+
 </script>
 
 </body>
